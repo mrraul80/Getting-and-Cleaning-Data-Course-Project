@@ -27,11 +27,11 @@ data.all <- rbind(data.train, data.test)
 select <- grep('mean|std', features)
 data.sub <- data.all[,c(1,2,mean_std.select + 2)]
 
-#3 The following 3 lines are used to give descriptive activity names to name the activities in the data setactivity.
+#3 The following 3 lines are used to give descriptive activity names to name the activities in the data set
 
-labels <- read.table('./UCI HAR Dataset/activity_labels.txt', header = FALSE)activity.
-labels <- as.character(activity.labels[,2])data.sub$activity <- activity.
-labels[data.sub$activity]
+activity.labels <- read.table('./UCI HAR Dataset/activity_labels.txt', header = FALSE)
+activity.labels <- as.character(activity.labels[,2])data.sub$activity <- 
+activity.labels[data.sub$activity]
 
 #4 With the next commands we will assigned appropriately labels to the data set with descriptive variable names
 
